@@ -1,5 +1,5 @@
 import loading from '../images/loading.svg'
-import '../stylesheets/app.scss'
+import '../stylesheets/loading_cover.scss'
 
 const LoadingCover = ({ showLoading }) => (
   <div className="loading-wrapper">

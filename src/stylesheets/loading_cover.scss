@@ -1,0 +1,40 @@
+@import "base";
+
+.loading-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+
+  .loading-image {
+    border: 2px solid #606060;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background: linear-gradient(#14ffe93d, #ffeb3b40, #ff00e01f, #53d41500, #3013ca26, #e017173b);
+    animation: rotate 1s linear infinite;
+    box-shadow: 0 0 50px #ff00e08a;
+    max-width: 80%;
+  }
+
+  .loading-text {
+    font-size: 24px;
+    line-height: 33px;
+    color: $white;
+    margin-top: 36px;
+  }
+}
+
+@keyframes rotate {
+  0%{
+    filter: hue-rotate(0deg);
+  }
+  100%{
+    filter: hue-rotate(360deg);
+  }
+}

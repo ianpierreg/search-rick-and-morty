@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+@import url('http://fonts.cdnfonts.com/css/seravek-medium');
 @import "variables";
 
 html, body {
   margin: 0;
   padding: 0;
+}
+
+body {
+  background: #1E1E1E;
 }
 
 *:focus {
