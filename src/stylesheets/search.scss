@@ -1,18 +1,21 @@
 @import "base";
 .search-wrapper {
   max-width: 80%;
+  min-width: 224px;
   display: flex;
   justify-content: center;
-  margin-top: 74px; //todo
+  margin-top: 8vh;
 
   .search-input {
-    width: 196px; //todo
-    height: 42px; //todo
+    width: 13.5vw;
+    min-width: 164px;
+    min-height: 42px;
+    height: 4.5vh;
     border: 2px solid $white;
     box-sizing: border-box;
-    border-radius: 8px; //todo
+    border-radius: 8px;
     background: transparent;
-    margin-right: 8px; //todo
+    margin-right: .5vw;
     padding: 10px 14px; //todo
     color: #FFFFFF;
     font-weight: bold;
@@ -27,6 +30,6 @@
   }
 
   .search-button {
-    margin-left: 8px; //todo
+    margin-left: .5vw;
   }
 }

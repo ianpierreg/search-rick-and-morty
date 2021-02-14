@@ -4,6 +4,7 @@ import '../stylesheets/character_details.scss'
 import Modal from 'react-modal';
 import Character from './character'
 import Button from './button'
+import LocationInfo from './location_info'
 
 
 export default function CharacterDetails({ show, close }) {
@@ -45,7 +46,16 @@ export default function CharacterDetails({ show, close }) {
         <div className="character-image-blurred">
           <img src={rick} alt="Rick Sanchez" />
         </div>
-        <div className="details-wrapper"></div>
+        <div className="details-wrapper">
+          <div className="about-wrapper">
+            <h1>About</h1>
+            <p className="personal-info">
+              Rick Sanchez is a male human. He is alive and well. Last seen in May 31, 2020.
+            </p>
+          </div>
+          <LocationInfo title="Origin" />
+          <LocationInfo title="Location" />
+        </div>
       </div>
     </Modal>
   )

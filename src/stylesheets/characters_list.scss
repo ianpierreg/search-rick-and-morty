@@ -1,11 +1,11 @@
 @import "base";
 
 .characters-list {
-  margin-top: 101px;
+  margin-top: 11vh;
   display: grid;
   grid-template-rows: repeat(6, min-content);
   width: 100vw;
-  height: 100vh;
+  height: 89vh;
   grid-gap: 24px;
   justify-content: center;
 }
