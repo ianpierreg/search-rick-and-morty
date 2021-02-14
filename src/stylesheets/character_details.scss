@@ -1,0 +1,46 @@
+@import "base";
+
+.floating-card {
+  position: absolute;
+  width: 401px;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  left: 0;
+  z-index: 10;
+}
+
+div.modal-wrapper {
+  background: #000;
+  width: 93%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 16px;
+  overflow: hidden;
+
+  .modal-close-button {
+    top: 20px;
+    left: calc(7% + 20px);
+    position: absolute;
+    z-index: 10
+  }
+
+  .character-image-blurred {
+    width: 37%;
+    height: 100%;
+    opacity: 0.4;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      width: 100%;
+      filter: blur(30px);
+    }
+  }
+
+  .details-wrapper {
+    width: 63%;
+    height: 100%;
+  }
+}

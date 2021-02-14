@@ -1,0 +1,13 @@
+@import "base";
+
+button {
+  width: 84px; //todo
+  height: 42px; //todo
+  color: $white;
+  background: transparent;
+  font-weight: 700;
+  border: 2px solid $white;
+  box-sizing: border-box;
+  border-radius: 8px; //todo
+  cursor: pointer;
+}
