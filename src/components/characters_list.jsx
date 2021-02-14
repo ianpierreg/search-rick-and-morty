@@ -1,34 +1,11 @@
-import loading from '../images/loading.svg'
 import '../stylesheets/characters_list.scss'
-import Character from "./character";
+import Character from './character'
 
-export default function CharactersList() {
+export default function CharactersList({ characters }) {
+
   return (
     <div className="characters-list">
-      <Character alive />
-      <Character alive={false} />
-      <Character alive />
-      <Character alive={false} />
-      <Character alive />
-      <Character alive={false} />
-      <Character alive />
-      <Character alive={false} />
-      <Character alive />
-      <Character alive={false} />
-      <Character alive />
-      <Character alive={false} />
-      <Character alive />
-      <Character alive={false} />
-      <Character alive />
-      <Character alive={false} />
-      <Character alive />
-      <Character alive={false} />
-      <Character alive />
-      <Character alive={false} />
-      <Character alive />
-      <Character alive={false} />
-      <Character alive />
-      <Character alive={false} />
+        {characters.map(char => <Character character={char} key={char.id} /> )}
     </div>
   )
 }

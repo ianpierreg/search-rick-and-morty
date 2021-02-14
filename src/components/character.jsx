@@ -3,8 +3,9 @@ import rick from '../images/rick.jpeg'
 import '../stylesheets/character.scss'
 import CharacterDetails from './character_details'
 
-export default function Character({ alive, expanded }) {
+export default function Character({ character, expanded }) {
   const [showDetails, setShowDetails] = useState(false)
+  const { id, name, status, species, image } = character
 
   useEffect(() => {
     console.log('sh', showDetails)
@@ -20,11 +21,11 @@ export default function Character({ alive, expanded }) {
     <>
       <div className={characterClass()} onClick={() => !expanded && setShowDetails(true)}>
         <div className="character-image-wrapper">
-          <img src={rick} alt="Rick Shanchez" className={!alive && 'grayscale'}/>
+          <img src={image} alt="Rick Shanchez" className={status === 'Dead' && 'grayscale'}/>
         </div>
         <div className="character-info">
-          <span className="name">Rick Sanchez</span>
-          <span className="species">Human</span>
+          <span className="name">{id+name}</span>
+          <span className="species">{species}</span>
         </div>
       </div>
       <CharacterDetails show={showDetails} close={() => setShowDetails(false)}/>

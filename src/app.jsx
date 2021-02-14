@@ -1,10 +1,16 @@
 import { useState, useEffect } from 'react'
+import { GraphQLClient, ClientContext } from 'graphql-hooks'
 import logo from './images/logo.svg'
 import './stylesheets/app.scss'
 import Search from './components/search'
 import LoadingCover from './components/loading_cover'
 import CharactersList from './components/characters_list'
+import Home from './home'
 
+
+const client = new GraphQLClient({
+  url: 'https://rickandmortyapi.com/graphql'
+})
 
 export default function App() {
   const [showLoading, setShowLoading] = useState(false)
@@ -24,15 +30,8 @@ export default function App() {
   }
 
   return (
-    <>
-      <div className={appClass()}>
-        <header className="header">
-          <img src={logo} className="logo" alt="logo" />
-          <Search setLoading={setShowLoading} />
-        </header>
-        {showList && <CharactersList />}
-      </div>
-      {showLoading && <LoadingCover />}
-    </>
+    <ClientContext.Provider value={client}>
+      <Home />
+    </ClientContext.Provider>
   )
 }
