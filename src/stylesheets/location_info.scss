@@ -1,0 +1,32 @@
+@import "base";
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6vh;
+
+  .planet {
+    font-size: 14px;
+    line-height: 19px;
+    color: #8C8C8C;
+  }
+
+  .planet-dimension {
+    font-size: 28px;
+    line-height: 38px;
+    color: #FFFFFF;
+  }
+
+  .dimension {
+    font-size: 18px;
+    line-height: 25px;
+    color: #D3D3D3;
+  }
+
+  .residents {
+    margin-top: 1.5vh;
+    font-size: 14px;
+    line-height: 19px;
+    color: #8C8C8C;
+  }
+}
