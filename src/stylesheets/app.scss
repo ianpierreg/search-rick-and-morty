@@ -28,3 +28,28 @@
 * {
   font-family: 'Nunito', sans-serif;
 }
+
+.pages {
+  display: flex;
+  position: fixed;
+  font-size: 25px;
+  line-height: 27px;
+  text-align: center;
+  bottom: 0;
+  color: #909090;
+  font-family: 'Seravek', sans-serif;
+  width: 100%;
+  justify-content: center;
+  font-weight: 500;
+  height: 100px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+
+  .page {
+    padding: 0 30px;
+  }
+  .current {
+    color: #CBD736;
+  }
+}

@@ -8,9 +8,7 @@ import CharactersList from './components/characters_list'
 import Home from './home'
 
 
-const client = new GraphQLClient({
-  url: 'https://rickandmortyapi.com/graphql'
-})
+const client = new GraphQLClient({ url: 'https://rickandmortyapi.com/graphql' })
 
 export default function App() {
   const [showLoading, setShowLoading] = useState(false)
