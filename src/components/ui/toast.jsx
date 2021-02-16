@@ -1,32 +1,28 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import '../../stylesheets/toast.scss'
 
 const Toast = ({ toastData }) => {
-  const toastInitialState = { title: undefined, message: undefined, dismissTime: 0 }
+  const toastInitialState = useMemo(() => ({ title: undefined, message: undefined, dismissTime: 0 }), [])
   const [toast, setToast] = useState(toastData)
 
   useEffect(() => {
     setToast(toastData || toastInitialState)
-  }, [toastData])
+  }, [toastData, toastInitialState])
 
   useEffect(() => {
     if (!toast.title || !toast.description) return
     setTimeout(() => {
       setToast(toastInitialState)
     }, toast.dismissTime || 4000)
-  }, [toast.title, toast.description, toast.dismissTime])
+  }, [toast.title, toast.description, toast.dismissTime, toastInitialState])
 
   return toast.title && toast.description ? (
     <>
-      <div className={`notification-container`}>
-        <div
-          className={`notification toast`}
-        >
-            <span className="notification-title">{toast.title}</span>
-            <span className="notification-message">
-              {toast.description}
-            </span>
+      <div className="otification-container">
+        <div className="notification toast">
+          <span className="notification-title">{toast.title}</span>
+          <span className="notification-message">{toast.description}</span>
         </div>
       </div>
     </>

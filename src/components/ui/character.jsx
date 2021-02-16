@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
-import CharacterDetails from './character_details'
-import { characterDefaultProps, characterPropTypes } from '../../helpers/common_prop_types'
 import classNames from 'classnames/bind'
+import { characterDefaultProps, characterPropTypes } from '../../helpers/common_prop_types'
+import CharacterDetails from './character_details'
 import '../../stylesheets/character.scss'
-
 
 const Character = ({ character, expanded }) => {
   const [showDetails, setShowDetails] = useState(false)
@@ -13,8 +12,8 @@ const Character = ({ character, expanded }) => {
   return (
     <>
       <div
-          className={classNames({ 'character-card': true, expanded })}
-          onClick={() => !expanded && setShowDetails(true)}
+        className={classNames({ 'character-card': true, expanded })}
+        onClick={() => !expanded && setShowDetails(true)}
       >
         <div className="character-image-wrapper">
           <img src={image} alt={name} className={status === 'Dead' && 'grayscale'}/>
@@ -25,15 +24,13 @@ const Character = ({ character, expanded }) => {
         </div>
       </div>
       <CharacterDetails
-          show={showDetails}
-          close={() => setShowDetails(false)}
-          character={character}
+        show={showDetails}
+        close={() => setShowDetails(false)}
+        character={character}
       />
     </>
   )
 }
-
-
 
 Character.propTypes = {
   character: characterPropTypes,

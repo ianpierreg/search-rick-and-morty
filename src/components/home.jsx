@@ -23,11 +23,11 @@ const Home = () => {
   useEffect(() => { setShowLoading(loading) }, [loading, setShowLoading])
 
   useEffect(() => {
-    if (searchValue && searchValue !== '') setCurrentPage(1) // TODO: do something about it maybe if undefined
+    if (searchValue && searchValue !== '') setCurrentPage(1)
   }, [searchValue, setCurrentPage])
 
   useEffect(() => {
-    if (currentPage > 0) fetchCharacters() // TODO: ignored promise
+    if (currentPage > 0) fetchCharacters()
   }, [currentPage, fetchCharacters])
 
   return (

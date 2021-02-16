@@ -3,7 +3,7 @@ import '../../stylesheets/loading_cover.scss'
 
 const LoadingCover = () => (
   <div className="loading-wrapper">
-    <img src={loading} alt="loading image" className="loading-image" />
+    <img src={loading} alt="loading" className="loading-image" />
     <span className="loading-text">Loading</span>
   </div>
 )

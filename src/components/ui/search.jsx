@@ -7,23 +7,23 @@ const Search = ({ setSearchValue }) => {
   const [name, setName] = useState('')
 
   return (
-  <div className="search-wrapper">
-    <input
-      type="search"
-      className="search-input"
-      placeholder="Search Characters"
-      onChange={e => setName(e.target.value)}
-      value={name}
-    />
-    <Button
-      onClick={() => setSearchValue(name)}
-      className="search-button"
-      text="Search"
-    />
-  </div>
+    <div className="search-wrapper">
+      <input
+        type="search"
+        className="search-input"
+        placeholder="Search Characters"
+        onChange={e => setName(e.target.value)}
+        value={name}
+      />
+      <Button
+        onClick={() => setSearchValue(name)}
+        className="search-button"
+        text="Search"
+      />
+    </div>
   )
 }
 
-Search.propTypes = { setSearchValue: PropTypes.func.isRequired, }
+Search.propTypes = { setSearchValue: PropTypes.func.isRequired }
 
 export default Search
