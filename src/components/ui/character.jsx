@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 import CharacterDetails from './character_details'
-import { locationPropTypes, locationDefaultProps } from './location_info'
+import { characterDefaultProps, characterPropTypes } from '../../helpers/common_prop_types'
 import classNames from 'classnames/bind'
 import '../../stylesheets/character.scss'
+
 
 const Character = ({ character, expanded }) => {
   const [showDetails, setShowDetails] = useState(false)
@@ -32,30 +33,15 @@ const Character = ({ character, expanded }) => {
   )
 }
 
+
+
 Character.propTypes = {
-  character: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    gender: PropTypes.string,
-    status: PropTypes.string,
-    species: PropTypes.string,
-    episode: PropTypes.arrayOf(PropTypes.shape({
-      air_date: PropTypes.number.isRequired
-    })).isRequired,
-    location: locationPropTypes,
-    origin: locationPropTypes
-  }),
+  character: characterPropTypes,
   expanded: PropTypes.bool
 }
 
 Character.defaultProps = {
-  character: PropTypes.shape({
-    gender: 'Unknown',
-    status: 'Unknown',
-    species: 'Unknown',
-    location: locationDefaultProps,
-    origin: locationDefaultProps
-  }),
+  character: characterDefaultProps,
   expanded: false
 }
 

@@ -2,8 +2,8 @@ import { useState } from 'react'
 import PropTypes from 'prop-types'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import classNames from 'classnames/bind'
+import Toast from './toast'
 import '../../stylesheets/pagination.scss'
-import Toast from '../toast'
 
 const Pagination = ({ numberOfPages, currentPage, setCurrentPage }) => {
   const [offset, setOffset] = useState(5)

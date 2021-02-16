@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import '../stylesheets/toast.scss'
+import '../../stylesheets/toast.scss'
 
 const Toast = ({ toastData }) => {
   const toastInitialState = { title: undefined, message: undefined, dismissTime: 0 }

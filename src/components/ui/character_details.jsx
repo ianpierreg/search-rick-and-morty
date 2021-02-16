@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import Modal from 'react-modal'
 import Character from './character'
 import Button from './button'
-import LocationInfo, { locationPropTypes, locationDefaultProps } from './location_info'
+import { characterDefaultProps, characterPropTypes } from '../../helpers/common_prop_types'
 import '../../stylesheets/character_details.scss'
 
 const CharacterDetails = ({ show, close, character }) => {
@@ -68,19 +68,14 @@ const CharacterDetails = ({ show, close, character }) => {
 }
 
 CharacterDetails.propTypes = {
+  character: characterPropTypes,
   show: PropTypes.bool,
   close: PropTypes.func.isRequired,
 }
 
 CharacterDetails.defaultProps = {
-  show: false,
-  character: PropTypes.shape({
-    gender: 'Unknown',
-    status: 'Unknown',
-    species: 'Unknown',
-    location: locationDefaultProps,
-    origin: locationDefaultProps
-  })
+  character: characterDefaultProps,
+  show: false
 }
 
 export default CharacterDetails

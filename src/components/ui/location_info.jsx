@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import { FiUsers } from 'react-icons/fi'
 import '../../stylesheets/location_info.scss'
+import { locationDefaultProps, locationPropTypes } from '../../helpers/common_prop_types'
 
 const LocationInfo = ({ title, location }) => {
   const { type, name, dimension, residents } = location
@@ -23,37 +24,13 @@ const LocationInfo = ({ title, location }) => {
 
 LocationInfo.propTypes = {
   title: PropTypes.string.isRequired,
-  location: PropTypes.shape({
-    type: PropTypes.string,
-    string: PropTypes.string,
-    dimension: PropTypes.string,
-    residents: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.number)),
-  })
+  location: locationPropTypes
 }
 
-LocationInfo.defaultProps = {
-  location: {
-    type: 'Unknown Place',
-    name: 'Unknown',
-    dimension: 'Unknown Dimension',
-    residents: []
-  }
-}
+LocationInfo.defaultProps = { location: locationDefaultProps }
 
-const locationPropTypes = PropTypes.shape({
-  type: PropTypes.string,
-  string: PropTypes.string,
-  dimension: PropTypes.string,
-  residents: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.number)),
-})
 
-const locationDefaultProps = {
-  type: 'Unknown Place',
-  name: 'Unknown',
-  dimension: 'Unknown Dimension',
-  residents: []
-}
 
-export { locationDefaultProps, locationPropTypes }
+
 
 export default LocationInfo
