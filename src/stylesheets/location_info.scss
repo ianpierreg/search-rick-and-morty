@@ -12,14 +12,14 @@
   }
 
   .planet-dimension {
-    font-size: 28px;
-    line-height: 38px;
+    font-size: 20px;
+    line-height: 25px;
     color: #FFFFFF;
   }
 
   .dimension {
-    font-size: 18px;
-    line-height: 25px;
+    font-size: 16px;
+    line-height: 24px;
     color: #D3D3D3;
   }
 
@@ -28,5 +28,24 @@
     font-size: 14px;
     line-height: 19px;
     color: #8C8C8C;
+
+    .icon {
+      margin-right: 13px;
+    }
+  }
+}
+
+
+@media (min-width: 600px) {
+  .location-info {
+    .planet-dimension {
+      font-size: 28px;
+      line-height: 38px;
+    }
+
+    .dimension {
+      font-size: 18px;
+      line-height: 25px;
+    }
   }
 }

@@ -9,6 +9,7 @@
   border-radius: 8px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0px 8px 5px 0px #000;
 
   &:hover {
     border: 2px solid #CBD736;
@@ -17,12 +18,19 @@
   }
 
   &.expanded {
-    width: 28vw;
-    height: 72.5vh;
+    width: 178px;
+    height: 173px;
 
     &:hover {
       border: none;
       box-shadow: none;
+    }
+  }
+
+  @media (min-width: 600px) {
+    &.expanded {
+      width: 28vw;
+      height: 72.5vh;
     }
   }
 
@@ -66,16 +74,5 @@
       line-height: 15px;
       font-weight: 400;
     }
-  }
-}
-
-@for $i from 1 through 20 {
-  .character-card:nth-of-type(#{$i}) {
-    transition: 0.5s visibility step-start,
-    0.5s pointer-events step-start,
-    0.5s opacity ease;
-    transition-delay: random()/2 + s;
-    opacity: 1;
-    pointer-events: all;
   }
 }

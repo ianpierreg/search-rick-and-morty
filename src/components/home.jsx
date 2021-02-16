@@ -6,9 +6,10 @@ import Search from './ui/search'
 import LoadingCover from './ui/loading_cover'
 import CharactersList from './ui/characters_list'
 import Pagination from './ui/pagination'
+import EmptyState from './ui/empty_state'
 import '../stylesheets/home.scss'
 
-export default function Home() {
+const Home = () => {
   const [showLoading, setShowLoading] = useState(false)
   const [searchValue, setSearchValue] = useState()
   const [currentPage, setCurrentPage] = useState(0)
@@ -36,7 +37,8 @@ export default function Home() {
           <img src={logo} className="logo" alt="logo" />
           <Search setSearchValue={setSearchValue} />
         </header>
-        {<CharactersList characters={characters} />}
+        {characters && characters.length && <CharactersList characters={characters} />}
+        {characters && !characters.length && <EmptyState />}
       </div>
       {currentPage > 0 && (
         <Pagination
@@ -49,3 +51,5 @@ export default function Home() {
     </>
   )
 }
+
+export default Home

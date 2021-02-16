@@ -1,0 +1,44 @@
+@import "variables";
+
+.pages {
+  display: flex;
+  position: fixed;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: center;
+  bottom: 0;
+  color: #909090;
+  font-family: 'Seravek', sans-serif;
+  width: 100%;
+  font-weight: 500;
+  height: 7vh;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+
+  .page {
+    width: 65px;
+    max-width: 12vw;
+    cursor: pointer;
+
+    &:hover {
+      color: #FFF;
+    }
+  }
+  .current {
+    color: #CBD736;
+  }
+
+
+  .left-arrow, .right-arrow {
+    //display: flex;
+    color: #3E3E3E;
+    display: flex;
+    font-size: 35px;
+    cursor: pointer;
+
+    &:hover {
+      color: #FFF;
+    }
+  }
+}

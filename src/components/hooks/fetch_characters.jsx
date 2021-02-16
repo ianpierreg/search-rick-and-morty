@@ -13,7 +13,26 @@ const QUERY = `query GetCharacters($name: String, $page: Int) {
       species,
       type,
       gender,
-      image
+      image,
+      episode {
+        air_date 
+      },
+      location {
+        name,
+        type,
+        dimension,
+        residents {
+          id
+        }
+      },
+      origin {
+        name,
+        type,
+        dimension,
+        residents {
+          id
+        }
+      }
     }
   }
 }`

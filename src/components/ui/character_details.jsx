@@ -1,11 +1,19 @@
-import rick from '../../images/rick.jpeg'
+import PropTypes from 'prop-types'
 import Modal from 'react-modal'
 import Character from './character'
 import Button from './button'
-import LocationInfo from './location_info'
+import LocationInfo, { locationPropTypes, locationDefaultProps } from './location_info'
 import '../../stylesheets/character_details.scss'
 
-export default function CharacterDetails({ show, close }) {
+const CharacterDetails = ({ show, close, character }) => {
+  const { name, image, gender, status, species, episode, location, origin } = character
+
+  const livingStatus = () => {
+    if (status === 'Dead') return 'He is dead. '
+    if (status === 'Alive') return 'He is alive and well. '
+    return 'It can\'t be told if he is alive or dead. '
+  }
+  const about = name + ' is a ' + gender + ' ' + species + '. ' + livingStatus() + 'Last seen in ' + episode.pop()?.air_date+ '.'
   return (
     <Modal
       isOpen={show}
@@ -27,34 +35,52 @@ export default function CharacterDetails({ show, close }) {
           display: 'flex',
           justifyContent: 'flex-end',
           border: 'none',
-          margin: 'auto'
+          margin: 'auto',
+          overflow: 'hidden',
         }
       }}
     >
       <div className="floating-card">
-        <Character alive expanded />
+        <Character character={character} expanded />
       </div>
       <div className="modal-wrapper">
         <Button
-          type="button"
           onClick={close}
           className="modal-close-button"
-          text="Close"
+          text=""
         />
         <div className="character-image-blurred">
-          <img src={rick} alt="Rick Sanchez" />
+          <img src={image} alt={name} />
         </div>
         <div className="details-wrapper">
           <div className="about-wrapper">
             <h1>About</h1>
             <p className="personal-info">
-              Rick Sanchez is a male human. He is alive and well. Last seen in May 31, 2020.
+              {about}
             </p>
           </div>
-          <LocationInfo title="Origin" />
-          <LocationInfo title="Location" />
+          <LocationInfo location={origin} title="Origin" />
+          <LocationInfo location={location} title="Location" />
         </div>
       </div>
     </Modal>
   )
 }
+
+CharacterDetails.propTypes = {
+  show: PropTypes.bool,
+  close: PropTypes.func.isRequired,
+}
+
+CharacterDetails.defaultProps = {
+  show: false,
+  character: PropTypes.shape({
+    gender: 'Unknown',
+    status: 'Unknown',
+    species: 'Unknown',
+    location: locationDefaultProps,
+    origin: locationDefaultProps
+  })
+}
+
+export default CharacterDetails
