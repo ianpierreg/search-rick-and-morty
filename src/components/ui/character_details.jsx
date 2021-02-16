@@ -1,11 +1,9 @@
-import { useState } from 'react'
-import rick from '../images/rick.jpeg'
-import '../stylesheets/character_details.scss'
-import Modal from 'react-modal';
+import rick from '../../images/rick.jpeg'
+import Modal from 'react-modal'
 import Character from './character'
 import Button from './button'
 import LocationInfo from './location_info'
-
+import '../../stylesheets/character_details.scss'
 
 export default function CharacterDetails({ show, close }) {
   return (

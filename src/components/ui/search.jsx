@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react'
-import '../stylesheets/search.scss'
+import { useState } from 'react'
 import Button from './button'
-
+import '../../stylesheets/search.scss'
 
 export default function Search({ setSearchValue }) {
     const [name, setName] = useState('')

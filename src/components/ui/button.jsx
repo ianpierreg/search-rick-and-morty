@@ -1,4 +1,4 @@
-import '../stylesheets/button.scss'
+import '../../stylesheets/button.scss'
 
 export default function Button({ className, onClick, text, type }) {
 

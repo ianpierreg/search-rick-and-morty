@@ -1,4 +1,4 @@
-import '../stylesheets/location_info.scss'
+import '../../stylesheets/location_info.scss'
 
 export default function LocationInfo({ title }) {
   return (
