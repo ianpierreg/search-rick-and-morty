@@ -2,7 +2,14 @@ import PropTypes from 'prop-types'
 import '../../stylesheets/button.scss'
 
 const Button = ({ className, onClick, text, type }) => (
-  <button type={type} onClick={onClick} className={className}>{text}</button>
+  <button
+    type={type}
+    onClick={onClick}
+    className={className}
+    aria-label={`${text} button`}
+  >
+    {text}
+  </button>
 )
 
 Button.propTypes = {

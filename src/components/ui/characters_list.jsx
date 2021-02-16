@@ -9,7 +9,7 @@ const CharactersList = ({ characters }) =>  (
   </div>
 )
 
-CharactersList.propTypes = { characters: PropTypes.arrayOf(characterPropTypes()) }
+CharactersList.propTypes = { characters: PropTypes.arrayOf(characterPropTypes) }
 
 CharactersList.defaultProps = {
   show: false,

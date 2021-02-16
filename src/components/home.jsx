@@ -40,12 +40,14 @@ const Home = () => {
         {characters && characters.length && <CharactersList characters={characters} />}
         {characters && !characters.length && <EmptyState />}
       </div>
-      {currentPage > 0 && (
-        <Pagination
-          numberOfPages={numberOfPages}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
+      {currentPage > 0 && characters && characters.length && (
+       <footer>
+         <Pagination
+           numberOfPages={numberOfPages}
+           currentPage={currentPage}
+           setCurrentPage={setCurrentPage}
+         />
+       </footer>
       )}
       {showLoading && <LoadingCover />}
     </>

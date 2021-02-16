@@ -51,7 +51,7 @@ const CharacterDetails = ({ show, close, character }) => {
         <Character character={character} expanded />
       </div>
       <div className="modal-wrapper">
-        <Button onClick={close} className="modal-close-button" text=""/>
+        <Button onClick={close} className="modal-close-button" text="" />
         <div className="character-image-blurred">
           <img src={image} alt={name} />
         </div>

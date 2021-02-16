@@ -14,6 +14,7 @@ const Search = ({ setSearchValue }) => {
         placeholder="Search Characters"
         onChange={e => setName(e.target.value)}
         value={name}
+        aria-label="Search box"
       />
       <Button
         onClick={() => setSearchValue(name)}

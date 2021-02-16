@@ -30,12 +30,16 @@
   }
 
 
-  .left-arrow, .right-arrow {
-    //display: flex;
-    color: #3E3E3E;
+  .arrows {
     display: flex;
+    align-items: center;
+    color: #3E3E3E;
     font-size: 35px;
     cursor: pointer;
+    border: none;
+    padding: 0;
+    width: auto;
+    min-width: auto;
 
     &:hover {
       color: #FFF;

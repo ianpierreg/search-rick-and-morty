@@ -4,7 +4,7 @@ import '../../stylesheets/empty_state.scss'
  const EmptyState = () => (
   <div className="empty-state">
     <div className="empty-image">
-      <img src={empty} alt=""/>
+      <img src={empty} alt="empty state" />
    </div>
     <div className="empty-title">Sorry! No Results Found :( </div>
     <div className="empty-subtitle">

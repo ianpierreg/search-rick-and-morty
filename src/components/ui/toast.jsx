@@ -19,7 +19,7 @@ const Toast = ({ toastData }) => {
 
   return toast.title && toast.description ? (
     <>
-      <div className="otification-container">
+      <div className="notification-container">
         <div className="notification toast">
           <span className="notification-title">{toast.title}</span>
           <span className="notification-message">{toast.description}</span>

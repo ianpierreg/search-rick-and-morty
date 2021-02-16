@@ -72,13 +72,13 @@ const Pagination = ({ numberOfPages, currentPage, setCurrentPage }) => {
   return numberOfPages && (
     <div className="pages">
       <Toast toastData={toastData} />
-      <div className="left-arrow">
-        <FiChevronLeft onClick={onLeftArrowClick} />
-      </div>
+      <button className="arrows" onClick={onLeftArrowClick}>
+        <FiChevronLeft />
+      </button>
       {numberOfPages && [...Array(numberOfPages)].map(renderPaginationNumbers)}
-      <div className="right-arrow">
-        <FiChevronRight onClick={onRightArrowClick} />
-      </div>
+      <button className="arrows" onClick={onRightArrowClick}>
+        <FiChevronRight />
+      </button>
     </div>
   )
 }

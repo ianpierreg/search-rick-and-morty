@@ -12,8 +12,10 @@ const Character = ({ character, expanded }) => {
   return (
     <>
       <div
+        role="button"
         className={classNames({ 'character-card': true, expanded })}
         onClick={() => !expanded && setShowDetails(true)}
+        aria-label={`Clickable card of the character ${name} from Rick and Morty TV Show`}
       >
         <div className="character-image-wrapper">
           <img src={image} alt={name} className={status === 'Dead' && 'grayscale'}/>
