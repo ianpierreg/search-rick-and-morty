@@ -1,14 +1,12 @@
-@import "variables";
-
 .characters-list {
   display: grid;
-  grid-template-rows: repeat(6, min-content);
-  width: 100vw;
-  height: 63vh;
   grid-gap: 24px;
+  grid-template-rows: repeat(6, min-content);
+  height: 63vh;
   justify-content: center;
   overflow-x: hidden;
   overflow-y: auto;
+  width: 100vw;
 }
 
 

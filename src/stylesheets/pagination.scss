@@ -1,25 +1,23 @@
-@import "variables";
-
 .pages {
-  display: flex;
-  position: fixed;
-  font-size: 20px;
-  line-height: 27px;
-  text-align: center;
+  align-items: center;
   bottom: 0;
+  box-sizing: border-box;
   color: #909090;
+  display: flex;
   font-family: 'Seravek', sans-serif;
-  width: 100%;
+  font-size: 20px;
   font-weight: 500;
   height: 7vh;
-  box-sizing: border-box;
   justify-content: center;
-  align-items: center;
+  line-height: 27px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
 
   .page {
-    width: 65px;
-    max-width: 12vw;
     cursor: pointer;
+    max-width: 12vw;
+    width: 65px;
 
     &:hover {
       color: #FFF;
@@ -31,15 +29,15 @@
 
 
   .arrows {
-    display: flex;
     align-items: center;
-    color: #3E3E3E;
-    font-size: 35px;
-    cursor: pointer;
     border: none;
+    color: #3E3E3E;
+    cursor: pointer;
+    display: flex;
+    font-size: 35px;
+    min-width: auto;
     padding: 0;
     width: auto;
-    min-width: auto;
 
     &:hover {
       color: #FFF;

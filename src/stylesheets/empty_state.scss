@@ -1,14 +1,12 @@
-@import "variables";
-
 .empty-state {
-  width: 100%;
-  padding: 0 25%;
+  align-items: center;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  align-items: center;
   justify-content: center;
-  box-sizing: border-box;
+  padding: 0 25%;
+  text-align: center;
+  width: 100%;
 
   .empty-image {
     width: 32vmin;
@@ -19,20 +17,20 @@
   }
 
   .empty-title {
-    font-family: 'Seravek', sans-serif;
-    font-weight: bold;
-    font-size: 3vmax;
-    line-height: 3vmax;
     color: #FFFFFF;
-    margin-top: 5vh;
+    font-family: 'Seravek', sans-serif;
+    font-size: 3vmax;
+    font-weight: bold;
+    line-height: 3vmax;
     margin-bottom: 3vh;
+    margin-top: 5vh;
   }
 
   .empty-subtitle {
+    color: #FFFFFF;
     font-family: 'Seravek', sans-serif;
     font-size: 2vmax;
     line-height: 3vmax;
-    color: #FFFFFF;
   }
 
   @media (min-width: 600px) {

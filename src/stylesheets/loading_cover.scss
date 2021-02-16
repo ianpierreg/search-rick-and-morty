@@ -1,31 +1,29 @@
-@import "variables";
-
 .loading-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  width: 100vw;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
-  top: 0;
+  justify-content: center;
   left: 0;
+  position: absolute;
+  top: 0;
+  width: 100vw;
 
   .loading-image {
-    border: 2px solid #606060;
-    box-sizing: border-box;
-    border-radius: 8px;
-    background: linear-gradient(#14ffe93d, #ffeb3b40, #ff00e01f, #53d41500, #3013ca26, #e017173b);
     animation: rotate 1s linear infinite;
+    background: linear-gradient(#14ffe93d, #ffeb3b40, #ff00e01f, #53d41500, #3013ca26, #e017173b);
+    border: 2px solid #606060;
+    border-radius: 8px;
     box-shadow: 0 0 50px #ff00e08a;
+    box-sizing: border-box;
     max-width: 80%;
   }
 
   .loading-text {
+    color: #FFF;
     font-size: 24px;
     line-height: 33px;
-    color: $white;
     margin-top: 4vh;
   }
 }
