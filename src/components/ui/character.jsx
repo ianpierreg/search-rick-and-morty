@@ -1,6 +1,7 @@
 import { useState, } from 'react'
 import CharacterDetails from './character_details'
 import '../../stylesheets/character.scss'
+import classNames from 'classnames/bind'
 
 export default function Character({ character, expanded }) {
   const [showDetails, setShowDetails] = useState(false)
@@ -9,7 +10,7 @@ export default function Character({ character, expanded }) {
   return (
     <>
       <div
-          className={'character-card' + (expanded && ' expanded')}
+          className={classNames({ 'character-card': true,  expanded })}
           onClick={() => !expanded && setShowDetails(true)}
       >
         <div className="character-image-wrapper">

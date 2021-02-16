@@ -1,17 +1,23 @@
 import { useState, useEffect } from 'react'
+import classNames from 'classnames/bind'
 import logo from '../images/logo.svg'
 import useFetchCharacters from './hooks/fetch_characters'
 import Search from './ui/search'
 import LoadingCover from './ui/loading_cover'
 import CharactersList from './ui/characters_list'
 import Pagination from './ui/pagination'
-import '../stylesheets/app.scss'
+import '../stylesheets/home.scss'
 
 export default function Home() {
   const [showLoading, setShowLoading] = useState(false)
   const [searchValue, setSearchValue] = useState()
   const [currentPage, setCurrentPage] = useState(0)
-  const { fetchCharacters, loading, characters, numberOfPages } = useFetchCharacters({ searchValue, currentPage })
+  const {
+    fetchCharacters,
+    loading,
+    characters,
+    numberOfPages
+  } = useFetchCharacters({ searchValue, currentPage })
 
   useEffect(() => { setShowLoading(loading) }, [loading, setShowLoading])
 
@@ -25,7 +31,7 @@ export default function Home() {
 
   return (
     <>
-      <div className={'app' + (showLoading && ' loading')}>
+      <div className={classNames({ home: true,  loading: showLoading })}>
         <header className="header">
           <img src={logo} className="logo" alt="logo" />
           <Search setSearchValue={setSearchValue} />

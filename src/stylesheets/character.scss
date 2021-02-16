@@ -26,8 +26,6 @@
     }
   }
 
-
-
   .character-image-wrapper {
     width: 100%;
     height: 100%;
@@ -68,5 +66,16 @@
       line-height: 15px;
       font-weight: 400;
     }
+  }
+}
+
+@for $i from 1 through 20 {
+  .character-card:nth-of-type(#{$i}) {
+    transition: 0.5s visibility step-start,
+    0.5s pointer-events step-start,
+    0.5s opacity ease;
+    transition-delay: random()/2 + s;
+    opacity: 1;
+    pointer-events: all;
   }
 }

@@ -1,6 +1,6 @@
 import { GraphQLClient, ClientContext } from 'graphql-hooks'
 import Home from './components/home'
-import './stylesheets/app.scss'
+import './stylesheets/_base.scss'
 
 export default function App() {
   const client = new GraphQLClient({ url: 'https://rickandmortyapi.com/graphql' })

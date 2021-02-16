@@ -1,14 +1,15 @@
 @import "variables";
+
 .search-wrapper {
-  max-width: 80%;
+  max-width: 80vw;
   min-width: 224px;
   display: flex;
   justify-content: center;
-  margin-bottom: 8vh;
+  height: 30%;
 
   .search-input {
-    width: 13.5vw;
-    min-width: 164px;
+    width: 15vw;
+    min-width: 110px;
     min-height: 42px;
     height: 4.5vh;
     border: 2px solid $white;
