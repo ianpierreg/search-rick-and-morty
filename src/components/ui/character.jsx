@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import { characterDefaultProps, characterPropTypes } from '../../helpers/common_prop_types'
@@ -13,12 +13,13 @@ const Character = ({ character, expanded }) => {
     <>
       <div
         role="button"
+        tabIndex="0"
         className={classNames({ 'character-card': true, expanded })}
         onClick={() => !expanded && setShowDetails(true)}
         aria-label={`Clickable card of the character ${name} from Rick and Morty TV Show`}
       >
         <div className="character-image-wrapper">
-          <img src={image} alt={name} className={status === 'Dead' && 'grayscale'}/>
+          <img src={image} alt={name} className={status === 'Dead' && 'grayscale'} />
         </div>
         <div className="character-info">
           <span className="name" title={name}>{name}</span>

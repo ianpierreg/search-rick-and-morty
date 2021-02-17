@@ -1,3 +1,4 @@
+import React from 'react'
 import PropTypes from 'prop-types'
 import Modal from 'react-modal'
 import { characterDefaultProps, characterPropTypes } from '../../helpers/common_prop_types'
@@ -6,6 +7,7 @@ import Character from './character'
 import Button from './button'
 import '../../stylesheets/character_details.scss'
 
+// eslint-disable-next-line max-lines-per-function
 const CharacterDetails = ({ show, close, character }) => {
   const { name, image, gender, status, species, episode, location, origin } = character
 
@@ -15,7 +17,8 @@ const CharacterDetails = ({ show, close, character }) => {
     return 'It can\'t be told if he is alive or dead.'
   }
 
-  const about = `${name} is a ${gender} ${species}. ${livingStatus()}. Last seen in ${episode.pop()?.air_date}.`
+  const about = `${name} is a ${gender} ${species}. ${livingStatus()}. 
+                 Last seen in ${episode.pop()?.air_date}.`
 
   const stylesModalOverlay = {
     position: 'fixed',

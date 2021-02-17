@@ -1,3 +1,4 @@
+import React from 'react'
 import { GraphQLClient, ClientContext } from 'graphql-hooks'
 import Home from './components/home'
 import './stylesheets/_base.scss'

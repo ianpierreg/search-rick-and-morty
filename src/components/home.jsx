@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import classNames from 'classnames/bind'
 import logo from '../images/logo.svg'
 import useFetchCharacters from './hooks/fetch_characters'
@@ -10,6 +10,7 @@ import EmptyState from './ui/empty_state'
 import '../stylesheets/home.scss'
 import Toast from './ui/toast'
 
+// eslint-disable-next-line max-lines-per-function
 const Home = () => {
   const [showLoading, setShowLoading] = useState(false)
   const [searchValue, setSearchValue] = useState()
@@ -45,7 +46,7 @@ const Home = () => {
   return (
     <>
       <Toast toastData={toastData} />
-      <div className={classNames({ home: true,  loading: showLoading })}>
+      <div className={classNames({ home: true, loading: showLoading })}>
         <header className="header">
           <img src={logo} className="logo" alt="logo" />
           <Search searchValue={searchValue} setSearchValue={setSearchValue} />
@@ -54,13 +55,13 @@ const Home = () => {
         {characters && !characters.length && <EmptyState />}
       </div>
       {currentPage > 0 && characters && characters.length && (
-       <footer>
-         <Pagination
-           numberOfPages={numberOfPages}
-           currentPage={currentPage}
-           setCurrentPage={setCurrentPage}
-         />
-       </footer>
+        <footer>
+          <Pagination
+            numberOfPages={numberOfPages}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
+        </footer>
       )}
       {showLoading && <LoadingCover />}
     </>

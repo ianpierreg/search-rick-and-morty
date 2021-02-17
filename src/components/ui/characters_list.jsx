@@ -1,3 +1,4 @@
+import React from 'react'
 import PropTypes from 'prop-types'
 import { characterDefaultProps, characterPropTypes } from '../../helpers/common_prop_types'
 import Character from './character'
@@ -12,8 +13,7 @@ const CharactersList = ({ characters }) =>  (
 CharactersList.propTypes = { characters: PropTypes.arrayOf(characterPropTypes) }
 
 CharactersList.defaultProps = {
-  show: false,
-  character: PropTypes.shape(characterDefaultProps)
+  characters: PropTypes.shape(characterDefaultProps)
 }
 
 export default CharactersList

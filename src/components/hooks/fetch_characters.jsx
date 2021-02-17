@@ -37,17 +37,15 @@ const QUERY = `query GetCharacters($name: String, $page: Int) {
   }
 }`
 
-
 export default function useFetchCharacters({ searchValue, currentPage }) {
   const [characters, setCharacters] = useState()
   const [numberOfPages, setNumberOfPages] = useState(0)
   const options = { variables: { name: searchValue, page: currentPage } }
   const [fetchCharacters, { loading, error, data }] = useManualQuery(QUERY, options)
 
-
   useEffect(() => {
-    if(data?.characters?.results) setCharacters(data.characters.results)
-    if(data?.characters?.info?.count) setNumberOfPages(Math.ceil(data.characters.info.count/20))
+    if (data?.characters?.results) setCharacters(data.characters.results)
+    if (data?.characters?.info?.count) setNumberOfPages(Math.ceil(data.characters.info.count / 20))
     if (data?.characters === null && error) setCharacters([])
   }, [loading, error, data])
 

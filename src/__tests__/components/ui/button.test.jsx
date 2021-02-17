@@ -14,14 +14,6 @@ describe('Testing Button component', () => {
     expect(buttonElem.getAttribute('aria-label')).toBe(`${text} button`)
   })
 
-  test('should render button with submit type', () => {
-    const text = 'submit button'
-    rendered = render (<Button text={text} type="submit" />)
-    const buttonElem = rendered.getByRole('button')
-    expect(buttonElem).toBeVisible()
-    expect(buttonElem.getAttribute('type')).toBe('submit')
-  })
-
   test('should render button with className', () => {
     const text = 'submit button'
     const className = 'buttonClass'

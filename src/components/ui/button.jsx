@@ -1,9 +1,10 @@
+import React from 'react'
 import PropTypes from 'prop-types'
 import '../../stylesheets/button.scss'
 
-const Button = ({ className, onClick, text, type }) => (
+const Button = ({ className, onClick, text }) => (
   <button
-    type={type}
+    type="button"
     onClick={onClick}
     className={className}
     aria-label={`${text} button`}
@@ -15,13 +16,11 @@ const Button = ({ className, onClick, text, type }) => (
 Button.propTypes = {
   className: PropTypes.string,
   text: PropTypes.string.isRequired,
-  type: PropTypes.string,
   onClick: PropTypes.func
 }
 
 Button.defaultProps = {
   className: '',
-  type: 'button',
   onClick: () => {}
 }
 

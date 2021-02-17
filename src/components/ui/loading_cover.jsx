@@ -1,3 +1,4 @@
+import React from 'react'
 import loading from '../../images/loading.svg'
 import '../../stylesheets/loading_cover.scss'
 

@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import classNames from 'classnames/bind'
 import Toast from './toast'
 import '../../stylesheets/pagination.scss'
 
+// eslint-disable-next-line max-lines-per-function
 const Pagination = ({ numberOfPages, currentPage, setCurrentPage }) => {
   const [offset, setOffset] = useState(5)
   const [toastData, setToastData] = useState()
@@ -26,12 +27,12 @@ const Pagination = ({ numberOfPages, currentPage, setCurrentPage }) => {
       return
     }
 
-    setOffset(offset => {
-      if (currentPage === offset - 4 || currentPage === offset - 5) return offset - 4
-      return offset
+    setOffset(oldOffest => {
+      if (currentPage === oldOffest - 4 || currentPage === oldOffest - 5) return oldOffest - 4
+      return oldOffest
     })
 
-    setCurrentPage(currentPage => currentPage - 1)
+    setCurrentPage(oldCurrentPage => oldCurrentPage - 1)
   }
 
   const onRightArrowClick = () => {
@@ -45,27 +46,30 @@ const Pagination = ({ numberOfPages, currentPage, setCurrentPage }) => {
       return offset
     })
 
-    setCurrentPage(currentPage => currentPage + 1)
+    setCurrentPage(oldCurrentPage => oldCurrentPage + 1)
+  }
+
+  const onPageNumberClick = pageNumber => {
+    setOffset(oldOffest => {
+      if (pageNumber === oldOffest) return oldOffest + 4
+      if (pageNumber === oldOffest - 4 && pageNumber >= 5) return oldOffest - 4
+      return oldOffest
+    })
+    setCurrentPage(pageNumber)
   }
 
   const renderPaginationNumbers = (_, index) => {
     const pageNumber = index + 1
     if (pageNumber > offset || pageNumber < offset - 4) return null
     return (
-      <div
+      <button
+        type="button"
         className={classNames({ page: true, current: pageNumber === currentPage })}
         key={pageNumber}
-        onClick={(() => {
-          setOffset(offset => {
-            if (pageNumber === offset) return offset + 4
-            if (pageNumber === offset - 4 && pageNumber >= 5) return offset - 4
-            return offset
-          })
-          setCurrentPage(pageNumber)
-        })}
+        onClick={() => onPageNumberClick(pageNumber)}
       >
         {pageNumber}
-      </div>
+      </button>
     )
   }
 
