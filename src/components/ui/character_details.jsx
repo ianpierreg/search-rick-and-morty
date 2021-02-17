@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Modal from 'react-modal'
 import { characterDefaultProps, characterPropTypes } from '../../helpers/common_prop_types'
 import LocationInfo from './location_info'
-import Character from './character'
+import ExpandedCharacter from './expanded_character'
 import Button from './button'
 import '../../stylesheets/character_details.scss'
 
@@ -51,7 +51,7 @@ const CharacterDetails = ({ show, close, character }) => {
       }}
     >
       <div className="floating-card">
-        <Character character={character} expanded />
+        <ExpandedCharacter character={character} />
       </div>
       <div className="modal-wrapper">
         <Button onClick={close} className="modal-close-button" text="" />

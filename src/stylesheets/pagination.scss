@@ -2,20 +2,21 @@
   align-items: center;
   bottom: 0;
   box-sizing: border-box;
-  color: #909090;
   display: flex;
   font-family: 'Seravek', sans-serif;
-  font-size: 20px;
-  font-weight: 500;
   height: 7vh;
   justify-content: center;
-  line-height: 27px;
   position: fixed;
   text-align: center;
   width: 100%;
 
   .page {
+    border: none;
+    color: #909090;
     cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 27px;
     max-width: 12vw;
     width: 65px;
 

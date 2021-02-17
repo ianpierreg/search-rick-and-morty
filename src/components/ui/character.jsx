@@ -1,31 +1,19 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames/bind'
 import { characterDefaultProps, characterPropTypes } from '../../helpers/common_prop_types'
 import CharacterDetails from './character_details'
+import BaseCharacter from './base_character'
 import '../../stylesheets/character.scss'
 
-const Character = ({ character, expanded }) => {
+const Character = ({ character }) => {
   const [showDetails, setShowDetails] = useState(false)
-  const { name, status, species, image } = character
 
   return (
     <>
-      <div
-        role="button"
-        tabIndex="0"
-        className={classNames({ 'character-card': true, expanded })}
-        onClick={() => !expanded && setShowDetails(true)}
-        aria-label={`Clickable card of the character ${name} from Rick and Morty TV Show`}
-      >
-        <div className="character-image-wrapper">
-          <img src={image} alt={name} className={status === 'Dead' && 'grayscale'} />
-        </div>
-        <div className="character-info">
-          <span className="name" title={name}>{name}</span>
-          <span className="species">{species}</span>
-        </div>
-      </div>
+      <BaseCharacter
+        character={character}
+        onClick={() => setShowDetails(true)}
+        label={`Clickable card of the character ${character.name} from Rick and Morty TV Show`}
+      />
       <CharacterDetails
         show={showDetails}
         close={() => setShowDetails(false)}
@@ -35,14 +23,8 @@ const Character = ({ character, expanded }) => {
   )
 }
 
-Character.propTypes = {
-  character: characterPropTypes,
-  expanded: PropTypes.bool
-}
+Character.propTypes = { character: characterPropTypes }
 
-Character.defaultProps = {
-  character: characterDefaultProps,
-  expanded: false
-}
+Character.defaultProps = { character: characterDefaultProps }
 
 export default Character
