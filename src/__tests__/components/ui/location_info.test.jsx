@@ -1,9 +1,10 @@
+import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
-import { render} from '@testing-library/react'
+import { render } from '@testing-library/react'
 import LocationInfo from '../../../components/ui/location_info'
 import { locationDefaultProps } from '../../../helpers/common_prop_types'
 
-
+// eslint-disable-next-line max-lines-per-function
 describe('Testing LocationInfo component', () => {
   let rendered
 
@@ -20,9 +21,9 @@ describe('Testing LocationInfo component', () => {
 
   test('should render location info with placeholders only on dimension and name', () => {
     const title = 'Location title'
-    const type = "Far Far Away Galaxy"
+    const type = 'Far Far Away Galaxy'
     const residents = [{ id: 1 }, { id: 2 }, { id: 3 }]
-    rendered = render(<LocationInfo title={title} location={{ type, residents }}/>)
+    rendered = render(<LocationInfo title={title} location={{ type, residents }} />)
     expect(rendered.getByText(title)).toBeVisible()
     expect(rendered.getByText(type)).toBeVisible()
     expect(rendered.getByText(`${residents.length} residents`)).toBeVisible()

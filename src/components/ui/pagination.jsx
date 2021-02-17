@@ -27,9 +27,9 @@ const Pagination = ({ numberOfPages, currentPage, setCurrentPage }) => {
       return
     }
 
-    setOffset(oldOffest => {
-      if (currentPage === oldOffest - 4 || currentPage === oldOffest - 5) return oldOffest - 4
-      return oldOffest
+    setOffset(oldOffset => {
+      if (currentPage === oldOffset - 4 || currentPage === oldOffset - 5) return oldOffset - 4
+      return oldOffset
     })
 
     setCurrentPage(oldCurrentPage => oldCurrentPage - 1)
@@ -41,19 +41,19 @@ const Pagination = ({ numberOfPages, currentPage, setCurrentPage }) => {
       return
     }
 
-    setOffset(offset => {
-      if (currentPage + 1 === offset || currentPage === offset) return offset + 4
-      return offset
+    setOffset(oldOffset => {
+      if (currentPage + 1 === oldOffset || currentPage === oldOffset) return oldOffset + 4
+      return oldOffset
     })
 
     setCurrentPage(oldCurrentPage => oldCurrentPage + 1)
   }
 
   const onPageNumberClick = pageNumber => {
-    setOffset(oldOffest => {
-      if (pageNumber === oldOffest) return oldOffest + 4
-      if (pageNumber === oldOffest - 4 && pageNumber >= 5) return oldOffest - 4
-      return oldOffest
+    setOffset(oldOffset => {
+      if (pageNumber === oldOffset) return oldOffset + 4
+      if (pageNumber === oldOffset - 4 && pageNumber >= 5) return oldOffset - 4
+      return oldOffset
     })
     setCurrentPage(pageNumber)
   }
@@ -76,11 +76,11 @@ const Pagination = ({ numberOfPages, currentPage, setCurrentPage }) => {
   return numberOfPages && (
     <div className="pages">
       <Toast toastData={toastData} />
-      <button className="arrows" onClick={onLeftArrowClick}>
+      <button type="button" className="arrows" onClick={onLeftArrowClick}>
         <FiChevronLeft />
       </button>
       {numberOfPages && [...Array(numberOfPages)].map(renderPaginationNumbers)}
-      <button className="arrows" onClick={onRightArrowClick}>
+      <button type="button" className="arrows" onClick={onRightArrowClick}>
         <FiChevronRight />
       </button>
     </div>

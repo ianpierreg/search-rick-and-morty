@@ -4,9 +4,9 @@ import { characterDefaultProps, characterPropTypes } from '../../helpers/common_
 import Character from './character'
 import '../../stylesheets/characters_list.scss'
 
-const CharactersList = ({ characters }) =>  (
+const CharactersList = ({ characters }) => (
   <div className="characters-list">
-      {characters.map(char => <Character character={char} key={char.id} /> )}
+    {characters.map(char => <Character character={char} key={char.id} />)}
   </div>
 )
 
