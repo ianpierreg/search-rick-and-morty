@@ -1,7 +1,6 @@
 # Search Character Ricky and Morty
 
-
-![Ricky and Morty coming out of a green portal](src/images/empty.png)
+![Ricky and Morty coming out of a green portal](src/images/empty.png){:height="700px" width="200px"}
 
 This project is a simple search app for the Ricky and Morty show characters. The data source is the [Ricky and Morty API](https://rickandmortyapi.com) 
 and it makes use of the graphql endpoint to get data from.
