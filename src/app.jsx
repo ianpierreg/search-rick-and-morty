@@ -1,6 +1,7 @@
 import React from 'react'
 import { GraphQLClient, ClientContext } from 'graphql-hooks'
 import Home from './components/home'
+import loading from './images/loading.svg'
 import './stylesheets/_base.scss'
 
 export default function App() {
@@ -9,6 +10,9 @@ export default function App() {
   return (
     <ClientContext.Provider value={client}>
       <Home />
+      <div className="hidden">
+        <img src={loading} alt="" />
+      </div>
     </ClientContext.Provider>
   )
 }
