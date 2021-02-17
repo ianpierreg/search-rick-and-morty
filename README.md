@@ -11,7 +11,7 @@ Unfortunately, I didn't have much time to dedicate to the project and some detai
 and that's why there is no end-to-end or integration tests 
 and there are only a few unit tests that were performed more to show testing skills than to really test the application.
 
-Of course, if I had time I would use some Test Driven approach like TDD, but since I knew beforehand that I wouldn't have much time
+Of course, if I had time I would have used some Test Driven approach like TDD, but since I knew beforehand that I wouldn't have much time
 to dedicate to this project at first I decided not to write tests concomitantly with app components. 
 
 <em>"Done is better than perfect"</em>
