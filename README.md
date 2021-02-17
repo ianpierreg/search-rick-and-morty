@@ -1,11 +1,14 @@
 # Search Character Ricky and Morty
 
-![Ricky and Morty coming out of a green portal](src/images/empty.png){:height="700px" width="200px"}
+![Ricky and Morty coming out of a green portal](src/images/empty.png)
+
+The application is available on https://ianpierreg.github.io/search-rick-and-morty/
 
 This project is a simple search app for the Ricky and Morty show characters. The data source is the [Ricky and Morty API](https://rickandmortyapi.com) 
 and it makes use of the graphql endpoint to get data from.
 
-Unfortunately, I didn't have much time to dedicate to the project this past week and some details are still to take care of and that's why there is no end-to-end or integration tests 
+Unfortunately, I didn't have much time to dedicate to the project and some details are still to take care of (like keyboard navigation, CI/CD, some responsiveness issues, images placeholders and so on)
+and that's why there is no end-to-end or integration tests 
 and there are only a few unit tests that were performed more to show testing skills than to really test the application.
 
 Of course, if I had time I would use some Test Driven approach like TDD, but since I knew beforehand that I wouldn't have much time

@@ -1,5 +1,5 @@
 {
-  "homepage": "https://ianpierreg.github.io/search-ricky-and-morty/",
+  "homepage": "http://ianpierreg.github.io/search-ricky-and-morty/",
   "name": "search-rick-and-morty",
   "version": "0.1.0",
   "private": true,
@@ -44,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^18.2.0"
   }
 }
