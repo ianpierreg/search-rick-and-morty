@@ -6,6 +6,19 @@
 This project is a simple search app for the Ricky and Morty show characters. The data source is the [Ricky and Morty API](https://rickandmortyapi.com) 
 and it makes use of the graphql endpoint to get data from.
 
+Unfortunately, I didn't have much time to dedicate to the project this past week and some details are still to take care of and that's why there is no end-to-end or integration tests 
+and there are only a few unit tests that were performed more to show testing skills than to really test the application.
+
+Of course, if I had time I would use some Test Driven approach like TDD, but since I knew beforehand that I wouldn't have much time
+to dedicate to this project at first I decided not to write tests concomitantly with app components. 
+
+<em>"Done is better than perfect"</em>
+
+I might come back letter to create tests and work on some application details.
+
+I tried to keep things as simple as possible so I didn't include any data management tool, 
+I just made use of a centralized component with almost all logic and processing functionalities
+so it could work as a single source of truth for the rest of the app.
 ## Available Scripts
 
 In the project directory, you can run:

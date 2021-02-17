@@ -8,17 +8,29 @@ import CharactersList from './ui/characters_list'
 import Pagination from './ui/pagination'
 import EmptyState from './ui/empty_state'
 import '../stylesheets/home.scss'
+import Toast from './ui/toast'
 
 const Home = () => {
   const [showLoading, setShowLoading] = useState(false)
   const [searchValue, setSearchValue] = useState()
   const [currentPage, setCurrentPage] = useState(0)
+  const [toastData, setToastData] = useState()
   const {
     fetchCharacters,
     loading,
+    error,
     characters,
     numberOfPages
   } = useFetchCharacters({ searchValue, currentPage })
+
+  useEffect(() => {
+    if (error && error.message) {
+      setToastData({
+        title: 'Ops!',
+        description: 'Some error happened trying to retrieve data...',
+      })
+    }
+  }, [error])
 
   useEffect(() => { setShowLoading(loading) }, [loading, setShowLoading])
 
@@ -32,10 +44,11 @@ const Home = () => {
 
   return (
     <>
+      <Toast toastData={toastData} />
       <div className={classNames({ home: true,  loading: showLoading })}>
         <header className="header">
           <img src={logo} className="logo" alt="logo" />
-          <Search setSearchValue={setSearchValue} />
+          <Search searchValue={searchValue} setSearchValue={setSearchValue} />
         </header>
         {characters && characters.length && <CharactersList characters={characters} />}
         {characters && !characters.length && <EmptyState />}

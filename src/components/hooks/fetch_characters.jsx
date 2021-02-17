@@ -48,9 +48,8 @@ export default function useFetchCharacters({ searchValue, currentPage }) {
   useEffect(() => {
     if(data?.characters?.results) setCharacters(data.characters.results)
     if(data?.characters?.info?.count) setNumberOfPages(Math.ceil(data.characters.info.count/20))
-    // TODO: treat error
     if (data?.characters === null && error) setCharacters([])
   }, [loading, error, data])
 
-  return { fetchCharacters, loading, characters, numberOfPages }
+  return { fetchCharacters, loading, error, characters, numberOfPages }
 }
