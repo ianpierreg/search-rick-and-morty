@@ -23,6 +23,7 @@
     position: absolute;
     top: 4px;
     z-index: 10;
+    display: flex;
 
     &:before {
       content: 'X';
@@ -81,6 +82,10 @@
     .modal-close-button {
       left: calc(7% + 20px);
       top: 20px;
+      border: 2px solid #FFF;
+      font-size: 1rem;
+      justify-content: center;
+      align-items: center;
 
       &:before {
         content: 'Close';

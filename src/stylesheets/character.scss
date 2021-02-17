@@ -8,6 +8,7 @@
   overflow: hidden;
   position: relative;
   width: 224px;
+  cursor: pointer;
 
   &:hover {
     border: 2px solid #CBD736;
@@ -65,6 +66,10 @@
       font-size: 20px;
       font-weight: 700;
       line-height: 25px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      cursor: pointer;
     }
 
     .species {

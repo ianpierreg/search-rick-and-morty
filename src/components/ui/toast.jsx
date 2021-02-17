@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import '../../stylesheets/toast.scss'
 
 const Toast = ({ toastData }) => {
-  const toastInitialState = useMemo(() => ({ title: undefined, message: undefined, dismissTime: 0 }), [])
+  const toastInitialState = useMemo(() => ({ title: undefined, description: undefined, dismissTime: 0 }), [])
   const [toast, setToast] = useState(toastData)
 
   useEffect(() => {

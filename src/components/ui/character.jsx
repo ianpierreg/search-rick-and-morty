@@ -21,7 +21,7 @@ const Character = ({ character, expanded }) => {
           <img src={image} alt={name} className={status === 'Dead' && 'grayscale'}/>
         </div>
         <div className="character-info">
-          <span className="name">{name}</span>
+          <span className="name" title={name}>{name}</span>
           <span className="species">{species}</span>
         </div>
       </div>

@@ -3,27 +3,31 @@ import { FiUsers } from 'react-icons/fi'
 import { locationDefaultProps, locationPropTypes } from '../../helpers/common_prop_types'
 import '../../stylesheets/location_info.scss'
 
-const LocationInfo = ({ title, location }) => (
-  <div className="location-info">
-    <h1>{title}</h1>
-    <span className="planet">{location.type}</span>
-    <span className="planet-dimension">{location.name}</span>
-    <span className="dimension">{location.dimension}</span>
-    {location.residents && (
-      <div className="residents">
-        <span className="icon"><FiUsers /></span>
-        <span className="residents-number">{location.residents.length} residents</span>
-      </div>
-    )}
-  </div>
-)
+const LocationInfo = ({ title, location }) => {
+  const locationWithPlaceholders = { ...locationDefaultProps, ...location }
+
+  return (
+    <div className="location-info">
+      <h1>{title}</h1>
+      <span className="planet">{locationWithPlaceholders.type}</span>
+      <span className="planet-dimension">{locationWithPlaceholders.name}</span>
+      <span className="dimension">{locationWithPlaceholders.dimension}</span>
+      {locationWithPlaceholders.residents && (
+        <div className="residents">
+          <span className="icon"><FiUsers /></span>
+          <span className="residents-number">{locationWithPlaceholders.residents.length} residents</span>
+        </div>
+      )}
+    </div>
+  )
+}
 
 LocationInfo.propTypes = {
   title: PropTypes.string.isRequired,
-  location: locationPropTypes
+  locationWithPlaceholders: locationPropTypes
 }
 
-LocationInfo.defaultProps = { location: locationDefaultProps }
+LocationInfo.defaultProps = { locationWithPlaceholders: locationDefaultProps }
 
 
 
